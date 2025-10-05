@@ -1,4 +1,3 @@
-// DOM Elements
 const hero = document.querySelector('.hero');
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -9,7 +8,6 @@ const progressFill = document.querySelector('.progress-fill');
 const previewItems = document.querySelectorAll('.preview-item');
 const indicatorSlider = document.querySelector('.indicator-slider');
 
-// Background images array - using your specified images
 const backgroundImages = [
     'img1.jpg',
     'main1.jpg',
@@ -22,45 +20,29 @@ const backgroundImages = [
 
 let currentBackgroundIndex = 0;
 
-// Initialize the website
 document.addEventListener('DOMContentLoaded', function() {
-    // Start background changing
     changeBackground();
-    
-    // Set up mobile menu
     setupMobileMenu();
-    
-    // Set up smooth scrolling
     setupSmoothScrolling();
-    
-    // Preload background images
     preloadImages();
 });
 
-// Function to change background images
 function changeBackground() {
-    // Set initial background
     hero.className = `hero background-1`;
     updatePageIndicator(0);
     startProgressBar();
-    console.log('Initial background set to:', hero.className);
     
     setInterval(() => {
-        // Trigger transition effect
         triggerTransition();
-        
         setTimeout(() => {
             currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundImages.length;
             const newClass = `hero background-${currentBackgroundIndex + 1}`;
             hero.className = newClass;
             updatePageIndicator(currentBackgroundIndex);
-            console.log('Background changed to:', newClass, 'Image:', backgroundImages[currentBackgroundIndex]);
-        }, 800); // Delay background change for transition effect
-        
-    }, 4000); // Change every 4 seconds for better testing
+        }, 800);
+    }, 4000);
 }
 
-// Function to trigger transition effect
 function triggerTransition() {
     if (transitionOverlay) {
         transitionOverlay.classList.add('active');
@@ -70,19 +52,15 @@ function triggerTransition() {
     }
 }
 
-// Function to update page indicator
 function updatePageIndicator(index) {
-    // Update dots if they exist
     dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
     });
     
-    // Update preview items
     previewItems.forEach((item, i) => {
         item.classList.toggle('active', i === index);
     });
     
-    // Update indicator slider position
     if (indicatorSlider) {
         const percentage = (index / (backgroundImages.length - 1)) * 100;
         indicatorSlider.style.left = `${percentage}%`;
@@ -91,7 +69,6 @@ function updatePageIndicator(index) {
     startProgressBar();
 }
 
-// Function to start progress bar animation
 function startProgressBar() {
     if (progressFill) {
         progressFill.style.width = '0%';
@@ -102,7 +79,6 @@ function startProgressBar() {
     }
 }
 
-// Mobile menu functionality
 function setupMobileMenu() {
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
@@ -110,7 +86,6 @@ function setupMobileMenu() {
             navMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -118,7 +93,6 @@ function setupMobileMenu() {
             });
         });
 
-        // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
@@ -128,19 +102,18 @@ function setupMobileMenu() {
     }
 }
 
-// Smooth scrolling for navigation links
 function setupSmoothScrolling() {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href') || '';
             const isHashLink = href.startsWith('#');
             if (!isHashLink) {
-                return; // allow normal navigation to other pages
+                return;
             }
             e.preventDefault();
             const targetSection = document.querySelector(href);
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+                const offsetTop = targetSection.offsetTop - 70;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -150,48 +123,34 @@ function setupSmoothScrolling() {
     });
 }
 
-// Preload background images for smoother transitions
 function preloadImages() {
-    backgroundImages.forEach((src, index) => {
+    backgroundImages.forEach((src) => {
         const img = new Image();
-        img.onload = () => {
-            console.log(`Image ${index + 1} loaded successfully:`, src);
-        };
-        img.onerror = () => {
-            console.error(`Failed to load image ${index + 1}:`, src);
-        };
         img.src = src;
     });
 }
 
-// Add click functionality to dots
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         currentBackgroundIndex = index;
         const newClass = `hero background-${index + 1}`;
         hero.className = newClass;
         updatePageIndicator(index);
-        console.log('Manual background change to:', newClass, 'Image:', backgroundImages[index]);
     });
 });
 
-// Add click functionality to preview items
 previewItems.forEach((item, index) => {
     item.addEventListener('click', () => {
-        // Trigger transition effect
         triggerTransition();
-        
         setTimeout(() => {
             currentBackgroundIndex = index;
             const newClass = `hero background-${index + 1}`;
             hero.className = newClass;
             updatePageIndicator(index);
-            console.log('Preview click - background change to:', newClass, 'Image:', backgroundImages[index]);
-        }, 400); // Delay for transition effect
+        }, 400);
     });
 });
 
-// Add some interactive effects to nav links
 navLinks.forEach((link, index) => {
     link.addEventListener('mouseenter', () => {
         link.style.animationDelay = `${index * 0.1}s`;

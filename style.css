@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ body {
     padding: 0 20px;
 }
 
-/* Typography */
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     font-weight: 600;
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #333;
 }
 
-/* Navigation */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: 0.3s;
 }
 
-/* Hero Section */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -185,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* About Section */
+
 .about {
     padding: 6rem 0;
     background: #fff;
@@ -253,7 +253,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Education Section */
+
 .education {
     padding: 6rem 0;
     background: #f8f9fa;
@@ -319,7 +319,6 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
 }
 
-/* Experience Section */
 .experience {
     padding: 6rem 0;
     background: #333;
@@ -347,8 +346,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #f0f0f0;
 }
 
-/* Portfolio Section */
-.portfolio {
+    .portfolio {
     padding: 6rem 0;
     background: #fff;
 }
@@ -436,7 +434,6 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-/* Prints Section */
 .prints {
     padding: 6rem 0;
     background: #f8f9fa;
@@ -478,7 +475,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-/* Course Section */
 .course {
     padding: 6rem 0;
     background: #fff;
@@ -493,7 +489,6 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.8;
 }
 
-/* Newsletter Section */
 .newsletter {
     padding: 4rem 0;
     background: #333;
@@ -540,7 +535,6 @@ h1, h2, h3, h4, h5, h6 {
     background: #f0f0f0;
 }
 
-/* Contact Section */
 .contact {
     padding: 6rem 0;
     background: #f8f9fa;
@@ -594,7 +588,6 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px);
 }
 
-/* Footer */
 .footer {
     padding: 2rem 0;
     background: #333;
@@ -625,7 +618,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
