@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    <link rel="stylesheet" href="photo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">PORTFOLIO</a>
+                </li>
+                <li class="nav-item">
+                    
+                </li>
+                <li class="nav-item">
+                    <a href="bhuvan.html" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Changing Background -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">CAPTURING LIFE'S BEAUTIFUL MOMENTS</h1>
+            <p class="hero-subtitle">EXPLORE THE WORLD WITH MY LENS</p>
+            <a href="portfolio.html" class="cta-button">VIEW MY WORK</a>
+        </div>
+        <div class="background-overlay"></div>
+        
+        <!-- Transition Overlay for Background Changes -->
+        <div class="transition-overlay"></div>
+        
+        <!-- Transition Wave Effect -->
+        <div class="transition-wave"></div>
+        
+        <!-- Bottom Transition Indicator -->
+        <div class="bottom-indicator">
+            <div class="indicator-track">
+                <div class="indicator-slider"></div>
+            </div>
+            <div class="transition-preview">
+                <div class="preview-item active" data-bg="1">
+                    <div class="preview-image" style="background-image: url('img1.jpg')"></div>
+                    <div class="preview-label"></div>
+                </div>
+                <div class="preview-item" data-bg="2">
+                    <div class="preview-image" style="background-image: url('main1.jpg')"></div>
+                    <div class="preview-label"></div>
+                </div>
+                <div class="preview-item" data-bg="3">
+                    <div class="preview-image" style="background-image: url('main2.jpg')"></div>
+                    <div class="preview-label"></div>
+                </div>
+                <div class="preview-item" data-bg="4">
+                    <div class="preview-image" style="background-image: url('main3.jpg')"></div>
+                    <div class="preview-label"></div>
+                </div>
+                <div class="preview-item" data-bg="5">
+                    <div class="preview-image" style="background-image: url('main4.jpg')"></div>
+                    <div class="preview-label"></div>
+                </div>
+                <div class="preview-item" data-bg="6">
+                    <div class="preview-image" style="background-image: url('main5.jpg')"></div>
+                    <div class="preview-label"></div>
+                </div>
+                <div class="preview-item" data-bg="6">
+                    <div class="preview-image" style="background-image: url('VID_20250727_042129_268.jpg')"></div>
+                    <div class="preview-label"></div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="photo.js"></script>
+</body>
+</html>
